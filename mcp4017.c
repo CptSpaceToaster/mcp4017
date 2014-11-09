@@ -6,8 +6,6 @@
  */ 
 
 #include "avr/io.h"
-#include "util/delay.h"
-
 #include "mcp4017.h"
 #include "../twi/i2cmaster.h"
 
@@ -28,7 +26,6 @@ uint8_t mcp4017_set_resistance(uint8_t res) {
 		return 1;
 	}
 	i2c_write(res);
-	
 	i2c_stop();
 	return 0;
 }
